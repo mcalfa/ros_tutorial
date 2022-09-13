@@ -7,6 +7,7 @@ if __name__ == '__main__':
 	rospy.loginfo("This node has been started")
 
 	rate = rospy.Rate(10)
+        # 10 Hz
 
 	while not rospy.is_shutdown():
 		rospy.loginfo("Hello")
