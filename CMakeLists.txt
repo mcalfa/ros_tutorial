@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  std_srvs
+  rospy_tutorials
 )
 
 ## System dependencies are found with CMake's conventions
@@ -144,6 +146,18 @@ target_link_libraries(robot_news_radio_transmitter ${catkin_LIBRARIES})
 add_executable(smartphone_node src/smartphone_node.cpp)
 target_link_libraries(smartphone_node ${catkin_LIBRARIES})
 
+add_executable(number_publisher src/number_publisher.cpp)
+target_link_libraries(number_publisher ${catkin_LIBRARIES})
+
+add_executable(number_counter src/number_counter.cpp)
+target_link_libraries(number_counter ${catkin_LIBRARIES})
+
+add_executable(add_two_ints_server src/add_two_ints_server.cpp)
+target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
+
+add_executable(add_two_ints_client src/add_two_ints_client.cpp)
+target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -168,23 +182,16 @@ target_link_libraries(smartphone_node ${catkin_LIBRARIES})
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
-# catkin_install_python(PROGRAMS
+# install(PROGRAMS
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
-## Mark executables for installation
-## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
-# install(TARGETS ${PROJECT_NAME}_node
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
-
-## Mark libraries for installation
-## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html
-# install(TARGETS ${PROJECT_NAME}
+## Mark executables and/or libraries for installation
+# install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
 ## Mark cpp header files for installation
