@@ -12,7 +12,5 @@ if __name__ == '__main__':
 		add_two_ints = rospy.ServiceProxy("/add_two_ints", AddTwoInts)
 		response = add_two_ints(2,6)
 		rospy.loginfo("Sum is : " + str(response.sum))
-		response = add_two_ints(14,15)
-		rospy.loginfo("Sum is : " + str(response.sum))
 	except rospy.ServiceException as e:
 		rospy.logwarn("Service failed: " + str(e))
