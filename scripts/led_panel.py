@@ -31,4 +31,3 @@ if __name__ == '__main__':
 	while not rospy.is_shutdown():
 		rospy.loginfo(led_states)
 		rate.sleep()
-
