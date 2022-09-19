@@ -20,13 +20,14 @@ if __name__ == '__main__':
 	rospy.init_node('battery')
 
 	battery_state = "full"
+	rospy.loginfo("The battery is full!")
 
 	while not rospy.is_shutdown():
 		rospy.sleep(7)
 		battery_state = "empty"
-		rospy.loginfo("The battery is empty !")
+		rospy.loginfo("The battery is empty!")
 		set_led(battery_state)
 		rospy.sleep(3)
 		battery_state = "full"
-		rospy.loginfo("The battery is now full")
+		rospy.loginfo("The battery is now full!")
 		set_led(battery_state)
