@@ -18,8 +18,10 @@ def set_led(battery_state):
 
 if __name__ == '__main__':
 	rospy.init_node('battery')
-
+	
 	battery_state = "full"
+
+	rospy.loginfo("Starting...")
 
 	while not rospy.is_shutdown():
 		rospy.sleep(7)
