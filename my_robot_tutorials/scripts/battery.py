@@ -21,7 +21,7 @@ if __name__ == '__main__':
 	
 	battery_state = "full"
 
-	rospy.loginfo("Starting...")
+	rospy.loginfo("Starting requests...")
 
 	while not rospy.is_shutdown():
 		rospy.sleep(7)
